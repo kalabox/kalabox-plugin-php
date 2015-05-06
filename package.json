@@ -1,5 +1,5 @@
 {
-  "name": "kalabox-plugin-git",
+  "name": "kalabox-plugin-php",
   "description": "A simple Kalabox plugin to add a PHP_VERSION env to containers.",
   "keywords": [
     "docker",
