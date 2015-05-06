@@ -8,20 +8,20 @@ before_install:
 - chmod +x $HOME/travis-ci.sh
 - cp ci/npm-config.sh $HOME/
 - chmod +x $HOME/npm-config.sh
-- $HOME/travis-ci.sh before-install
+- "$HOME/travis-ci.sh before-install"
 before_script:
-- $HOME/travis-ci.sh before-script
+- "$HOME/travis-ci.sh before-script"
 script:
-- $HOME/travis-ci.sh script
+- "$HOME/travis-ci.sh script"
 after_script:
-- $HOME/travis-ci.sh after-script
+- "$HOME/travis-ci.sh after-script"
 after_success:
-- $HOME/travis-ci.sh after-success
+- "$HOME/travis-ci.sh after-success"
 before_deploy:
-- $HOME/travis-ci.sh before-deploy
+- "$HOME/travis-ci.sh before-deploy"
 - cd built
 after_deploy:
-- $HOME/travis-ci.sh after-deploy
+- "$HOME/travis-ci.sh after-deploy"
 cache:
   directories:
   - node_modules
@@ -33,3 +33,8 @@ notifications:
     - mike@kalamuna.com
     - ben@kalamuna.com
     on_success: always
+env:
+  global:
+  - secure: JuN3kU2r87GQIGkvdxifBqWNXJPiskE0ez+HdIr58sPgSqRL10QTQ8qgcnWDHK8HAqp2Vuk0Srm1+Aqfw5MlGKT9na1pjBHXTsQZUcq73s9Ve0FIcgZqHMmRhS8s6D565f6O7GHBCTL01qVcn/bkP8DzI3gvgdkvqEfS2ogGmsoHdBtjIQwHoQJSVT8AbX8/MAOP1VZFWq7I1VudCpMB9DxQU/k+QcyOU2+EGQyjVcPA3y9HpB+VoJH+TQNNGh2OFXyX5tyMlaOGE/UvBkLR2mBLs+rdznRSenW9gmE3aCGl5OMsD39MoLeNZlZEffYyo9c1PJBPX8yJLGccuaLM5l3Vp/KHEf8Y1WForKvyelh1MEidzPETNGD4uE+IK7imnMbxd3TVL3VZ+YAnF/bN3XlKjddf3cqgtGVvuUmhFD7/QceC6sfF2ZNdGTP4uJ+p4t6B60xSQZ8YWZKRmrA83Pp9LbvUTPlfSVZnd2U2M5UkhEr94SP93G3clhiNB6mNgNJORpq+Rj4wfEbH/EK7cLTIFg0wydMup+2lFrsOvN9h0nN+ovy+p6fFkUIDmcABrK6j8WRVq4mB/soU9aoGrBs3qMeYksty6/UQvWk1ArJ9CaRY6rIBCjj9jLF/hNIkyZ04EtuqNJd3prJL334y0R3bdixlQLTuPpJW9Od0+qk=
+  - secure: AvC4+ORiNEex96Ua/d+lvXubWD9lUy1YcoKiXhgwmGdNty1zycjPxjBTGC8Mx1aj7zyVecaFidTms4Nxbu4buARcTDyI11Ri+a5EHfVDfDSxQcMCa0QLr95mZlWUaSsS/RwovbcELhLpK3/P8rbdZlkBL/J3B6QevzON8aElvqz9eR2I1hl2V6sY2pzPjwyZtC21P/iCkS1a7H5yITEcAWIQdKlFh2SAjT8BUKLONsX5+WX1vEeSN74u7fwNHCFNbipRNAdBv4Or29mqFpOHVk2cm0Gw0n04tQ1B7G5+ZLFRWPlySRzO3iruaPY8eIdVA1NT1Rb827lZR+PK0aWpad70gEUrWyVZyblQTqscza6Eo+YzlfC6uBkF5BMAe0VxrNQHlfMJJ/lJ+EAPHcjhhzKbIsOc/STWC7KJ1YnQnfJeWn5VNoV5TKUvkSVidUBFVloTzNF7l4VhgSN/DPRImvWTC6wJrJTml/Zpl0sEODUrGk05FoTV6mMmN7zkvSqTS+UrdRgXuG4rru9B86YCf7iWp9CHM+WWnx7Qui14oWj3b9wrKHrzU/XuNw96l0HBBI+oizO9B75+neg64AoGpSgzJAIkN4wR9DodimC7zQXvoRu79Q9ZAeP2e85tiCckj5TQwP9Ox5Ntia3BS2P+2glkJ8lHNN2R0EvQ/F60vhg=
+  - secure: CqChhREhKEHdxu6dKYXeszlbF3V7PvJePpgRIG7i6XPWEhQZbvykmisgDc1rmftXrla0y8vesjyl/OlHlw7d2KimYrEgA1nZ0xXrTHiRd+CpP6YMzPTRqJApJ3TV4E8YnyyzzREpPurP0u3DeOjVi25WgYLlw7/rgF0diDCSizck4HVZLFEkM4G+mFhX0lcF5k88ivsg6Rw7sAH/51Zb4ftRgR22jfDkRXQCP5nkEcUH691gBSrtlM8txOAwx919qqbFgp6DOtLiT05jBYP1LXRGE5otrO1+N51N+kP2rTWP6OCmPUxYeJZ89XjeH0W9LYQ2y8GtpaH11x4RMSQaTr9OojBU61UE/WcfmYUo1FLy+sgcsnAwmfgNGUqERIWarXnyAJs2NlxbJ5L+wrGqY5zkwo4AIrM9/vmvEM1u6UdErTFA5MM+8HmvRSRknVIkPfIhyGpsjqeh08/qJ5auoOlW9ypjQ4YAAzU2f8aAADanScIkZBQSvHRijcZiPz4UsVzBwGorta0HXgBqQf0PpoGw1gSWEoWH4J4/ni+H11D2OA+h6+B+HqOCIXJD1IWHZG5xjkFhzV5rMewn98JV/wKA+E3+3i3vckgdV9eyb7D6fIudhU2Unug/bzYZh2JvXDrQVG9YHVBtUY3zFYC6ve1+sxsfWFMYHNx5Z7/C6HE=
