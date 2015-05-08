@@ -20,7 +20,8 @@ module.exports = function(kbox, drupal, appName) {
             return drupal[answers['drupal-version']].php;
           }
           else {
-            return '5.4.36';
+            // @todo: figure out how to make this less brittle
+            return '5.4.40';
           }
         },
         choices: phpVersions
