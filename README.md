@@ -31,10 +31,12 @@ your container must know how to handle this!!!**
 ```json
   "kalabox-plugin-php": {
     "conf": {
-      "php-version": "5.4.36"
+      "php-version": "5.4.40"
     }
   }
 ```
+
+**It is important to note that if you change this in your config you will need to perform a `kbox rebuild` to see the changes reflected**
 
 ## Other Resources
 
