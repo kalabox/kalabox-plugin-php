@@ -1,9 +1,9 @@
+PLUGIN_REPO="kalabox/kalabox-plugin-php"
 #!/bin/bash
 
 COMMAND=$1
 EXIT_VALUE=0
 PLUGIN_REPO="kalabox/kalabox-plugin-php"
-
 ##
 # SCRIPT COMMANDS
 ##
@@ -25,11 +25,9 @@ before-install() {
     [ -z "$TRAVIS_TAG" ] &&
     [ $TRAVIS_REPO_SLUG == $PLUGIN_REPO ] &&
     [ $TRAVIS_NODE_VERSION == "0.12" ]; then
-      openssl aes-256-cbc -K $encrypted_f52af7219fe7_key -iv $encrypted_f52af7219fe7_iv -in ci/travis.id_rsa.enc -out $HOME/.ssh/travis.id_rsa -d
+      openssl aes-256-cbc -K $encrypted_d86a545e0257_key -iv $encrypted_d86a545e0257_iv -in ci/travis.id_rsa.enc -out $HOME/.ssh/travis.id_rsa -d
   fi
 }
-
-#$ node -pe 'JSON.parse(process.argv[1]).foo' "$(cat foobar.json)"
 
 # before-script
 #
@@ -70,7 +68,7 @@ after-success() {
   # 4. Is latest node version
   if [ $TRAVIS_PULL_REQUEST == "false" ] &&
     [ -z "$TRAVIS_TAG" ] &&
-    [ $TRAVIS_REPO_SLUG == PLUGIN_REPO ] &&
+    [ $TRAVIS_REPO_SLUG == $PLUGIN_REPO ] &&
     [ $TRAVIS_NODE_VERSION == "0.12" ]; then
 
     # Try to grab our git tag
