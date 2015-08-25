@@ -1,4 +1,3 @@
-PLUGIN_REPO="kalabox/kalabox-plugin-php"
 #!/bin/bash
 
 COMMAND=$1
