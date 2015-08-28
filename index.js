@@ -6,7 +6,7 @@ module.exports = function(kbox) {
 
   var events = kbox.core.events;
 
-  kbox.whenApp(function(app) {
+  kbox.ifApp(function(app) {
 
     // Events
     // EVENT: pre-engine-create
