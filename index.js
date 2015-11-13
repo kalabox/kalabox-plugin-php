@@ -4,7 +4,7 @@ var PLUGIN_NAME = 'kalabox-plugin-php';
 
 module.exports = function(kbox) {
 
-  var events = kbox.core.events;
+  var events = kbox.core.events.context('12c6880d-0ad3-406d-8be6-3f89c677168a');
 
   kbox.ifApp(function(app) {
 
